@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
+import flixel.util.FlxColor;
 import flixel.util.FlxMath;
 
 /**
@@ -12,13 +13,46 @@ import flixel.util.FlxMath;
  */
 class MenuState extends FlxState
 {
+  private var _gameTitle:FlxText;
+  private var _startButton:FlxButton;
+
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
+    _gameTitle = new FlxText(10, 90, 300, "Brain Damaged Motorcycle 1942");
+    _gameTitle.setFormat(null, 16, FlxColor.WHITE, "center");
+    add(_gameTitle);
+
+    _startButton = new FlxButton(137, 195, "", onStart);
+    _startButton.loadGraphic("assets/images/btnStartDown.png");
+    _startButton.onOver.callback = onStartOver;
+    _startButton.onOut.callback = onStartOut;
+    add(_startButton);
+
 		super.create();
 	}
+
+  private function onStart():Void
+  {
+    FlxG.cameras.fade(FlxColor.BLACK, 1, false, onFade);
+  }
+
+  private function onFade():Void
+  {
+    FlxG.switchState(new PlayState());
+  }
+
+  private function onStartOver():Void
+  {
+    _startButton.loadGraphic("assets/images/btnStartDown.png");
+  }
+
+  private function onStartOut():Void
+  {
+    _startButton.loadGraphic("assets/images/btnStartDown.png");
+  }
 	
 	/**
 	 * Function that is called when this state is destroyed - you might want to 
