@@ -29,6 +29,9 @@ class PlayState extends FlxState
     FlxG.mouse.visible = false;
     FlxG.cameras.flash(FlxColor.BLACK);
 
+    _overworld = new TiledLevel("assets/tiled/overworld.tmx");
+    add(_overworld.foregroundTiles);
+
     _player = new FlxSprite(240, 200);
     _player.loadGraphic("assets/images/cycle.png", true, true, 15, 9);
     _player.animation.add("idle", [0]);
@@ -41,9 +44,6 @@ class PlayState extends FlxState
     _player.width = 15;
     _player.height = 9;
     _player.offset.set(8, 2);
-
-    _overworld = new TiledLevel("assets/tiled/overworld.tmx");
-    add(_overworld.foregroundTiles);
 
     FlxG.worldBounds.set(0, 0, 800, 600);
     FlxG.worldDivisions = 8;
