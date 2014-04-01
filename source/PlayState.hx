@@ -6,6 +6,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 import flixel.util.FlxMath;
@@ -15,6 +16,7 @@ import flixel.util.FlxMath;
  */
 class PlayState extends FlxState
 {
+  private var _overworld:TiledLevel;
   private var _player:FlxSprite;
 
   private var _playerSpeed:Float = 120;
@@ -39,6 +41,9 @@ class PlayState extends FlxState
     _player.width = 15;
     _player.height = 9;
     _player.offset.set(8, 2);
+
+    _overworld = new TiledLevel("assets/tiled/overworld.tmx");
+    add(_overworld.foregroundTiles);
 
     FlxG.worldBounds.set(0, 0, 800, 600);
     FlxG.worldDivisions = 8;
