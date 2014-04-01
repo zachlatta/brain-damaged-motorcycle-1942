@@ -14,6 +14,7 @@ import flixel.util.FlxMath;
 class MenuState extends FlxState
 {
   private var _gameTitle:FlxText;
+  private var _bg:FlxSprite;
   private var _startButton:FlxButton;
 
 	/**
@@ -21,8 +22,11 @@ class MenuState extends FlxState
 	 */
 	override public function create():Void
 	{
-    _gameTitle = new FlxText(10, 90, 300, "Brain Damaged Motorcycle 1942");
-    _gameTitle.setFormat(null, 16, FlxColor.WHITE, "center");
+    _bg = new FlxSprite(0, 0, "assets/images/menuBackground.png");
+    add(_bg);
+
+    _gameTitle = new FlxText(10, 25, 300, "Brain Damaged Motorcycle 1942");
+    _gameTitle.setFormat(null, 16, FlxColor.BLACK, "center");
     add(_gameTitle);
 
     _startButton = new FlxButton(137, 195, "", onStart);
