@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="graal" tilewidth="16" tileheight="16">
+  <image source="pics1.png" width="2048" height="512"/>
+ </tileset>
+ <layer name="bg" width="20" height="20">
+  <properties>
+   <property name="tileset" value="graal"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0ksOgjAYReEmoDxUcAtFXltVFNkC9sUyPQxYQOtQBl/SyT35SZhKISYPn0QIBQ0DC5f4NTYypRfTg4aBhUOf+vdmNtVBiBtqNGjRYQnoyYz72CpoGFg49FnAfWyqI/ehRoMWHZaAnsy5j62ChoGFQ5/797KIHjsFDQMLh2vk37uzeWBAW/CdGHm/11ZAb5Xzb5xwxgUFyjistRnYP/HC+GNrt/snX1Ub7Ac=
+  </data>
+ </layer>
+ <objectgroup name="events" width="20" height="20">
+  <object name="princess" type="player" x="47" y="70" width="32" height="32">
+   <properties>
+    <property name="facing" value="down"/>
+   </properties>
+  </object>
+  <object name="soldier" type="npc" x="202" y="175" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="collisions" width="20" height="20">
+  <object name="c1" type="collision" x="178" y="2" width="122" height="158"/>
+ </objectgroup>
+</map>
