@@ -26,7 +26,7 @@ class MenuState extends FlxState
     add(_gameTitle);
 
     _startButton = new FlxButton(137, 195, "", onStart);
-    _startButton.loadGraphic("assets/images/btnStartDown.png");
+    _startButton.loadGraphic("assets/images/btnStartUp.png");
     _startButton.onOver.callback = onStartOver;
     _startButton.onOut.callback = onStartOut;
     add(_startButton);
@@ -51,7 +51,7 @@ class MenuState extends FlxState
 
   private function onStartOut():Void
   {
-    _startButton.loadGraphic("assets/images/btnStartDown.png");
+    _startButton.loadGraphic("assets/images/btnStartUp.png");
   }
 	
 	/**
