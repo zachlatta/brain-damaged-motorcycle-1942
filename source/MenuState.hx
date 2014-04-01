@@ -31,6 +31,8 @@ class MenuState extends FlxState
     _startButton.onOut.callback = onStartOut;
     add(_startButton);
 
+    add(new FlxText(160, 220, 160, "by Zach Latta and Jack Miesse"));
+
 		super.create();
 	}
 
